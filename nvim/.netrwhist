@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/hoyintse/OneDrive - The Hong Kong Polytechnic University/Year3/Year3-Sem1/COMP3122/Lecture/Lecture4/myflaskapp'
+let g:netrw_dirhist_4='/Applications/XAMPP/xamppfiles/htdocs/cloudbreakr-laravel/resources/react'
+let g:netrw_dirhist_3='/Applications/XAMPP/xamppfiles/htdocs/cloudbreakr-laravel/resources'
+let g:netrw_dirhist_2='/Applications/XAMPP/xamppfiles/htdocs/cloudbreakr-laravel'
+let g:netrw_dirhist_1='/Users/hoyintse/Desktop/OneDrive - The Hong Kong Polytechnic University/Year3/Year3-Sem1/COMP3122/Exercise/Ex1'
