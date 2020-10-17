@@ -1,0 +1,193 @@
+window:  
+# Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  startup_mode: Maximized
+
+
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 2000
+
+
+# Font configuration (changes require restart)
+font:
+  # The size to use.
+  size: 12.0
+  # The normal (roman) font face to use.
+  normal:
+    family: Droid Sans Mono Slashed for Powerline
+    # Style can be specified to pick a specific face.
+    style: Regular
+
+  # The bold font face
+  bold:
+    family: Droid Sans Mono Slashed for Powerline
+    # Style can be specified to pick a specific face.
+    # style: Bold
+
+  # The italic font face
+  italic:
+    family: Droid Sans Mono Slashed for Powerline
+    # Style can be specified to pick a specific face.
+    # style: Italic
+    #
+# Thin stroke font rendering (macOS only)
+#
+# Thin strokes are suitable for retina displays, but for non-retina screens
+# it is recommended to set `use_thin_strokes` to `false`
+#
+# macOS >= 10.14.x:
+#
+# If the font quality on non-retina display looks bad then set
+# `use_thin_strokes` to `true` and enable font smoothing by running the
+# following command:
+#   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
+#
+# This is a global setting and will require a log out or restart to take
+# effect.
+use_thin_strokes: true
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
+
+# Offset is the extra space around each character. `offset.y` can be thought of
+  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+offset:
+  x: 0
+  y: 1
+
+# Glyph offset determines the locations of the glyphs within their cells with
+# the default being at the bottom. Increasing `x` moves the glyph to the right,
+# increasing `y` moves the glyph upwards.
+glyph_offset:
+  x: 0
+  y: 0
+# Colors (Darkside)
+schemes:
+
+  Darkside: &Darkside
+    primary:
+      background: '#000000'
+      foreground: '#BABABA'
+
+  # Normal colors
+    normal:
+      black:    '#000000'
+      red:      '#E8341C'
+      green:    '#68C256'
+      yellow:   '#F2D42C'
+      blue:     '#1C98E8'
+      magenta:  '#8E69C9'
+      cyan:     '#1C98E8'
+      white:    '#BABABA'
+
+  # Bright colors
+    bright:
+      black:    '#666666'
+      red:      '#E05A4F'
+      green:    '#77B869'
+      yellow:   '#EFD64B'
+      blue:     '#387CD3'
+      magenta:  '#957BBE'
+      cyan:     '#3D97E2'
+      white:    '#BABABA'
+
+  Monokai Pro: &MonokaiPro
+  # Colors (Monokai Pro)
+  # Default colors
+    primary:
+      background: '#000000'
+      foreground: '#FCFCFA'
+
+  # Normal colors
+    normal:
+      black:   '#000000'
+      red:     '#FF6188'
+      green:   '#A9DC76'
+      yellow:  '#FFD866'
+      blue:    '#FC9867'
+      magenta: '#AB9DF2'
+      cyan:    '#78DCE8'
+      white:   '#FCFCFA'
+
+  # Bright colors
+    bright:
+      black:   '#727072'
+      red:     '#FF6188'
+      green:   '#A9DC76'
+      yellow:  '#FFD866'
+      blue:    '#FC9867'
+      magenta: '#AB9DF2'
+      cyan:    '#78DCE8'
+      white:   '#FCFCFA'
+      
+colors: *Darkside
+# Background opacity
+#
+# Window opacity as a floating point number from `0.0` to `1.0`.
+# The value `0.0` is completely transparent and `1.0` is opaque.
+background_opacity: 0.55
+
+cursor:
+  style: Beam
+  # Whether the cursor should be a hollow block on window focus loss
+  unfocused_hollow: true
+
+#hide_cursor_when_typing: true
+
+# Live config reload (changes require restart)
+live_config_reload: true
+
+# Visual Bell
+#
+# Any time the BEL code is received, Alacritty "rings" the visual bell. Once
+# rung, the terminal background will be set to white and transition back to the
+# default background color. You can control the rate of this transition by
+# setting the `duration` property (represented in milliseconds). You can also
+# configure the transition function by setting the `animation` property.
+#
+# Values for `animation`:
+#   - Ease
+#   - EaseOut
+#   - EaseOutSine
+#   - EaseOutQuad
+#   - EaseOutCubic
+#   - EaseOutQuart
+#   - EaseOutQuint
+#   - EaseOutExpo
+#   - EaseOutCirc
+#   - Linear
+#
+# Specifying a `duration` of `0` will disable the visual bell.
+_bell:
+  animation: EaseOutExpo
+  duration: 1
+  color: '0xffffff'
+
+mouse:
+  # Click settings
+  #
+  # The `double_click` and `triple_click` settings control the time
+  # alacritty should wait for accepting multiple clicks as one double
+  # or triple click.
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+  hide_when_typing: true
+
+url:
+      # URL launcher
+      #
+      # This program is executed when clicking on a text which is recognized as a URL.
+      # The URL is always added to the command as the last parameter.
+      launcher: open
+
