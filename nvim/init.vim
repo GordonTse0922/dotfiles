@@ -8,10 +8,9 @@ if dein#load_state('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('rakr/vim-one')
   call dein#add('morhetz/gruvbox')
-  call dein#add('sainnhe/gruvbox-material')
   call dein#add('luochen1990/rainbow',{
     \ 'hook_add':'let g:rainbow_active = 1'})
-  call dein#add('psliwka/vim-smoothie',{'hook_add':'let g:smoothie_no_default_mappings = v:true'})
+  "call dein#add('psliwka/vim-smoothie',{'hook_add':'let g:smoothie_no_default_mappings = v:true'})
   call dein#add('liuchengxu/vim-which-key',{
     \ 'on_cmd':['Whichkey','Whichkey!'],
     \ 'hook_add':"
@@ -30,8 +29,9 @@ if dein#load_state('~/.cache/dein')
     \ "
     \ })
   call dein#add('norcalli/nvim-colorizer.lua',{
+    \ 'hook_add':'set termguicolors',
     \ 'on_ft':['html','css','sass','scss','stylus','vim','javascript','javascriptreact','typescript','typescriptreact'],
-    \ 'hook_source':'source ~/.vim/config/plugins/colorizer-settings.lua'
+    \ 'hook_source':'source ~/.vim/config/plugins/colorizer-settings.vim'
     \ })
   call dein#add('easymotion/vim-easymotion',{
 		\ 'on_map':{'n':'<Plug>'},
@@ -65,6 +65,7 @@ if dein#load_state('~/.cache/dein')
     "\ let g:buffet_powerline_separators=1\n
     "\ "
     "\ })
+  call dein#add('christoomey/vim-tmux-navigator')
   call dein#add('liuchengxu/vim-clap')
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
   call dein#add('junegunn/fzf.vim', {
@@ -76,6 +77,7 @@ if dein#load_state('~/.cache/dein')
     \ 'hook_source':'source ~/.vim/config/plugins/coc-settings.vim'
     \ })
   call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
   call dein#add('vn-ki/coc-clap')
   call dein#add('Shougo/defx.nvim',{
     \ 'on_cmd':'Defx',
@@ -98,6 +100,11 @@ if dein#load_state('~/.cache/dein')
     \ 'hook_source':'source ~/.vim/config/plugins/echodoc.vim'})
   call dein#add('godlygeek/tabular')
   call dein#add('gabrielelana/vim-markdown')
+  "call dein#add('plasticboy/vim-markdown',{'hook_add':"
+    "\ let g:vim_markdown_math = 1\n
+    "\ let g:vim_markdown_conceal = 0\n
+    "\ "
+    "\ })
   call dein#add('sheerun/vim-polyglot',{
     \ 'hook_source':'source ~/.vim/config/plugins/polyglot.vim'})
   call dein#add('dense-analysis/ale',{
@@ -119,12 +126,15 @@ endif
 call dein#call_hook('source')
 call dein#call_hook('post_source')
 filetype plugin indent on
-let g:python3_host_prog = '/usr/local/bin/python3.8'
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/Users/hoyintse/opt/anaconda3/bin/python'
+let g:kite_supported_languages = ['python', 'javascript', 'go','html']
 syntax on
-colors one
+colors gruvbox
+"let ayucolor="dark"
 set background=dark
 set termguicolors
-set re=1
+"set re=1
 highlight Normal guibg=NONE ctermbg=NONE
 highlight LineNr guibg=NONE ctermbg=NONE
 """ Other Configurations
@@ -139,7 +149,7 @@ set list listchars=trail:»,tab:»-
 set fillchars+=vert:\
 set wrap breakindent
 set encoding=utf-8
-set number relativenumber
+set number 
 set title
 " Title length.
 set titlelen=95
@@ -493,10 +503,10 @@ nnoremap <silent> <Leader>gp :Gpush<CR>
 "_____________
 "Smooth scrolling
 "-------------
-nnoremap <silent> <C-f> :<C-U>call smoothie#forwards()<CR>
-nnoremap <silent> <C-b> :<C-U>call smoothie#backwards()<CR>
-nnoremap <silent> <C-d> :<C-U>call smoothie#downwards()<CR>
-nnoremap <silent> <C-u> :<C-U>call smoothie#upwards()<CR>
+"nnoremap <silent> <C-f> :<C-U>call smoothie#forwards()<CR>
+"nnoremap <silent> <C-b> :<C-U>call smoothie#backwards()<CR>
+"nnoremap <silent> <C-d> :<C-U>call smoothie#downwards()<CR>
+"nnoremap <silent> <C-u> :<C-U>call smoothie#upwards()<CR>
 "-------------
 "Defx -File explorer
 "-------------

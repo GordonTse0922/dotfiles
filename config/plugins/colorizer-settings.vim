@@ -1,4 +1,8 @@
-require 'colorizer'.setup {
+"Attaches to every FileType mode
+
+lua require 'colorizer'.setup()
+
+lua require 'colorizer'.setup{
   css = { rgb_fn = true; };
   scss = { rgb_fn = true; };
   sass = { rgb_fn = true; };
